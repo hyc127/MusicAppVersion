@@ -7,6 +7,7 @@ import setting from '../components/setting'
 import singers from '../components/singer'
 import playMv from '../components/playMv'
 import singerpage from '../components/singerpage'
+import ranklist from '../components/ranklist'
 
 Vue.use(Router)
 
@@ -45,5 +46,9 @@ export default new Router({
         },
       ]
     },
+    {
+      path: '/ranklist',
+      component: ranklist,
+    }
   ]
 })

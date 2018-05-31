@@ -14,7 +14,7 @@
         </i>
         <p class="small">歌手</p>
       </router-link>
-      <router-link to="" class="nav-item">
+      <router-link to="ranklist" class="nav-item">
         <i>
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-paixingbang"></use>

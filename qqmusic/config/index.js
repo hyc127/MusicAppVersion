@@ -18,6 +18,14 @@ module.exports = {
         },
         secure: false,
         changeOrigin: true
+      },
+      '/usa/*': {
+        target: 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg',
+        pathRewrite: {
+          '^/usa/': ''
+        },
+        secure: false,
+        changeOrigin: true
       }
     },
 
