@@ -22,7 +22,7 @@
   <div class="songs">
     <p>歌曲 供161首</p>
     <ul class="songs-item">
-      <li class="song" v-for="(item, index) in musics" :key="index" @click="play(item.songid)">
+      <li class="song" v-for="(item, index) in musics" :key="index" @click="$store.commit('play', item.songid)">
         <h3 class="small" v-text="item.songname">哑巴</h3>
       </li>
     </ul>
@@ -35,11 +35,6 @@
 <script>
 
 export default {
-  methods: {
-    play(id) {
-      player.play(id)
-    }
-  },
   computed: {
     name() {
       return this.$store.state.singerinfo.singer_name

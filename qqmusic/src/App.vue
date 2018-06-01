@@ -2,6 +2,7 @@
   <div id="app">
     <p v-show="!finish">欢迎使用VueMusci，请等待加载完成-------todo换成图片</p>
     <router-view v-if="finish"></router-view>
+    <player></player>
   </div>
 </template>
 

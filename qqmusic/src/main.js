@@ -7,10 +7,14 @@ import VueLazyLoad from 'vue-lazyload'
 import Mint from 'mint-ui'
 import '../node_modules/mint-ui/lib/style.css'
 import { createStore } from './store'
+import player from './components/player.vue'
+Vue.component('player', player)
+
 Vue.use(Mint)
 Vue.use(VueLazyLoad, {
   loading: './assets/logo.png'
 })
+
 Vue.config.productionTip = false
 
 const store = createStore()

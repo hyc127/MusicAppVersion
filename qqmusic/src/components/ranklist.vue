@@ -32,7 +32,7 @@
       <li class="list-item" v-for="(item, index) in _detail" :key="index">
         <div class="list-thumbnail w-70 flex-flow">
           <span class="list-badge w-10"> {{ index + 1 }} </span>
-          <img :src="prefex + item.data.albummid + '.jpg'" alt="" class="s-img w-40" @click="play(item.data.songid)">
+          <img :src="prefex + item.data.albummid + '.jpg'" alt="" class="s-img w-40" @click="$store.commit('play', item.data.songid)">
           <span v-text="item.data.songname" class="w-40 name">肆无忌惮</span>
         </div>
         <span class="w-30 name" v-text="item.data.singer[0].name">薛之谦</span>

@@ -12,6 +12,9 @@ export function createStore() {
       lists: {},
       Mvlist: {},
       singers: [],
+      currentPlay: {},
+      isplaying: false,
+      ispausing: true,
       Radios: [
         {
         "disstid": "4104519030",

@@ -78,7 +78,7 @@
     <div class="recommend">
       <h5 class="rec-t">为你推荐歌单</h5>
 
-      <div class="rec-item" v-for="(item, index) in recommends" :key="index" @click="play(index)">
+      <div class="rec-item" v-for="(item, index) in recommends" :key="index" @click="$store.commit('play', commonDate[index])">
         <div class="rec-pic">
           <img :src="item.cover" class="play-pic">
         </div>
@@ -92,7 +92,7 @@
     <div class="recommend">
       <h5 class="rec-t">最新专辑</h5>
 
-      <div class="rec-item" v-for="(item, index) in new_al" :key="index" @click="play(item.songid)">
+      <div class="rec-item" v-for="(item, index) in new_al" :key="index" @click="$store.commit('play', item.songid)">
         <div class="rec-pic">
           <img :src="item.img" class="play-pic">
         </div>
@@ -115,7 +115,7 @@
 
     <div class="recommend">
       <h5 class="rec-t">精选电台</h5>
-      <div class="circle" v-for="(item, index) in _playlist" :key="index" @click="play(item.song_ids)">
+      <div class="circle" v-for="(item, index) in _playlist" :key="index" @click="$store.commit('play', item.song_ids)">
         <div class="dt-i">
           <div class="dt-item">
             <img :src="item.img" alt="" class="dt-pic">
@@ -209,27 +209,21 @@
 </template>
 
 <script>
-import _play from '../utils/playMusci'
 import commonDate from '../assets/moker/radio'
 
 export default {
     data() {
         return {
-            album: [] ,new_song: [], luckyNumber: 0, recommend: [], new_album: [], playlist: [], mvlist: [], isPlayMV: false
+            album: [] ,new_song: [], luckyNumber: 0, recommend: [], new_album: [], playlist: [], mvlist: [], isPlayMV: false, commonDate: commonDate.radio
         }
     },
     methods: {
-      play: index => {
-        console.log(index)
-        player.play(index)
-        // player.play(commonDate.radio[index])
-      },
       playMv(vid) {
         this.$router.push({
           path: 'playMv',
           query: { mvId: vid }
         })
-      }
+      },
     },
     computed: {
       new_al() {
